@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
 func main() {
 	//Temos dois tipos de números, inteiros e reais, eles se subdividem entre várias categorias
@@ -25,8 +28,27 @@ func main() {
 
 	var real32 float32 = 123.123123
 	var real64 float64 = 123.12312384108
-	//Declarar somente como float dará erro, precisamos declarar se será 32 ou 64
+	// * Declarar somente como float dará erro, precisamos declarar se será 32 ou 64
 
 	fmt.Println("REAIS:", real32, real64)
 
+	char := 'T'
+
+	fmt.Println(char)
+	// * Printa o valor do número na tabela ASCII, o Go não possui o tipo char.
+
+	// ^ Valor zero, todo tipo de dado tem o seu valor zero, exemplo: String = "", int = 0, erro = nil, bool = false
+
+	var texto string
+	fmt.Println(texto)
+
+	var boolFalse bool = false // (caso declare bool como false, simplesmente declare var boolFalse bool, sem passar o valor)
+	var boolTrue bool = true
+
+	fmt.Println(boolFalse, boolTrue)
+
+	var erro error = errors.New("Erro interno") // serve como valor zero para interface, erro, ponteiros
+	//errors é um pacote nativo do Go, caso queira personalizar a mensagem do erro, terá que utilizar este pacote.
+
+	fmt.Println(erro)
 }
