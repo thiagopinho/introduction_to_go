@@ -14,6 +14,7 @@ type cenarioDeTeste struct {
 //sintaxe de uma função de teste, obrigatoriamente começa com Test, uma boa prática é colocar exatamente o nome da função, e depois recebe um parametro que é um ponteiro do tipo T que está dentro do pacote testing.
 
 func TestTipoDeEndereco(t *testing.T) {
+	t.Parallel() //rodar em paralelo
 
 	cenarioDeTeste := []cenarioDeTeste{
 
@@ -37,4 +38,11 @@ func TestTipoDeEndereco(t *testing.T) {
 		}
 	}
 
+}
+
+func TestQualquer(t *testing.T) {
+	t.Parallel() //roda em paralelo somente testes que possuem t.Parallel()
+	if 1 > 3 {
+		t.Errorf("O teste falhou")
+	}
 }
